@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lesson 1 Iterations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <script>
+        function solution(N) {
+            var strBinary = N.toString(2);
+            console.log(strBinary);
+            var matchResultZero = strBinary.match(/([^1]+)(0+)?(?=1)/g);
+            //console.log(matchResultZero);
+            var maxZero = getMaxLengthOfArray(matchResultZero);
+            return maxZero;
+        }
+
+        function getMaxLengthOfArray(val) {
+            var nowLength = 0,
+            maxLength = 0;
+            if (!val || !val.length) {
+                return 0;
+            }
+            console.log(val);
+            console.log(typeof(val));
+            console.log(val.length);
+            for (var i = 0; i<val.length; i++) {
+                nowLength = val[i].length;
+                if (nowLength > maxLength) {
+                    maxLength = nowLength;
+                }
+                console.log("nowLength : " + nowLength + ' / ' + "maxLength : " + maxLength);
+            }
+            console.log("getMaxLengthOfArray result : " + maxLength);
+            return maxLength;
+        }
+
+        solution(5);
+
+    </script>
+</body>
+</html>
