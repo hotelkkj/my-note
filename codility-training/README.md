@@ -1,0 +1,1 @@
+codility test를 틈틈히 해본다.
