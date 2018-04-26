@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lesson 2 Arrays - CyclicRotation_answer_01</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+연속된 숫자의 배열 중 빠진 하나를 찾는거라 <br>
+최대 숫자까지의 연속된 합에서 배열 요소의 전체 합을 빼면 그 값이 빠진 수이다.<br>
+합 연산을 해야하기에 경우에 따라 비효율적이거나 number overflow 발생의 여지가 있다.
+<body>
+    <script>
+        function solution(A) {
+            var arrSum = sumArray(A);
+            var arrLength = A.length;
+            var arrCompareSum = sumContinuesNum(A.length+1);
+
+            console.log(arrSum, arrLength, arrCompareSum );
+            console.log(Number.MAX_VALUE);
+            return arrCompareSum - arrSum;
+        }
+
+        function sumArray(A) {
+            var sum = 0;
+            for (var i = 0; i < A.length; i++) {
+                sum += A[i];
+            }
+            return sum;
+        }
+
+
+        function sumContinuesNum(maxNum) {
+            var sum = 0;
+            for (var i = 1; i <= maxNum; i++) {
+                sum += i;
+            }
+            return sum;
+        }
+
+        solution([1,2,3,4,6]);
+
+    </script>
+</body>
+</html>
